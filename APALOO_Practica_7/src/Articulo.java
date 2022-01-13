@@ -7,21 +7,26 @@ public class Articulo {
 	int costo;
 	
 	public Articulo() {
-		this.tipo= "";
+		setTipoR();
 		this.nombre= "";
-		this.costo=0;
+		setCostoRandom();
 	}
 	
-	public void setTipo() {//cultura, cientifico, terror, novela, generado aleatoriamente
+	public void setTipoR() {//cultura, cientifico, terror, novela, generado aleatoriamente
 		
 		int genero= ran.nextInt(5)+1;
 		
 		switch(genero) {
-		case 1: this.tipo= "cultura"; break;
-		case 2: this.tipo= "cientifico"; break;
-		case 3: this.tipo= "terror"; break;
-		case 4: this.tipo= "novela"; break;
+		case 1: this.tipo= "Cultura"; break;
+		case 2: this.tipo= "Cientifico"; break;
+		case 3: this.tipo= "Terror"; break;
+		case 4: this.tipo= "Novela"; break;
+		//default: System.out.println("La opcion que ingresaste no es valida"); break;
 		}
+	}
+	
+	public void setTipo(String tipo) {
+		this.tipo=tipo;
 	}
 	
 	public String getTipo() {
@@ -40,7 +45,7 @@ public class Articulo {
 		this.costo= costo;
 	}
 	
-public void setCostoRandom() {
+	public void setCostoRandom() {
 		
 		int precio= ran.nextInt(1201)+25;
 		this.costo= precio;

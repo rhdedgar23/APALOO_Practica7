@@ -1,13 +1,15 @@
+import java.util.Random;
 
 public class Libro extends Articulo {
 	
+	Random ran= new Random();
 	String autor;
 	int noPag;
 	
 	public Libro(){
 		super();
 		this.autor= "";
-		this.noPag= 0;
+		setNoPagRandom();
 	}
 	
 	public void setTitulo(String tipo) {
@@ -24,6 +26,11 @@ public class Libro extends Articulo {
 	
 	public String getAutor() {
 		return autor;
+	}
+	
+	public void setNoPagRandom() {
+		int pags= ran.nextInt(1001)+50;
+		this.noPag= pags;
 	}
 	
 	public void setNoPag(int noPag) {
